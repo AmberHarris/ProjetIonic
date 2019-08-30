@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title text-center>Panneaux de signalisation</ion-title>
+    <ion-buttons slot="start"> <!--groupement de boutons en début (start) ou fin (end) de toolbar-->
+      <ion-back-button defaultHref="liste-categorie" text=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="jumbotron">
+    <h4 text-center> Tous les panneaux de signalisation</h4><br>
+    <p class="text-secondary" text-justify>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+
+    <ion-card *ngFor="let panneau of panneaux" (click)="onClick(panneau.id)" float-left>
+      <ion-img [src]="panneau.image"></ion-img>
+    </ion-card>
+  </div>
+</ion-content>

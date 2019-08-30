@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Detail de la catégorie</ion-title>
+    <ion-buttons slot="start"> <!--groupement de boutons en début (start) ou fin (end) de toolbar-->
+      <ion-back-button defaultHref="liste-categorie" text=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="categorie">
+    <img [src]="categorie.image"/>
+    <ion-card-header>
+      <ion-card-title>{{categorie.title}}</ion-card-title>
+      <ion-card-subtitle>Rédigé par CausticCat</ion-card-subtitle>
+      <p text-justify>Vous pourrez trouver sur cette page, les spécifications de ce type de panneau, ainsi qu'un lien direct vers la liste des panneaux de ce type</p>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>Forme du panneau : {{categorie.forme}}</ion-item>
+      <ion-item>Position : {{categorie.position}}</ion-item>
+    </ion-card-content>
+
+    <ion-item href="panneaux" class="primary">
+      <ion-icon name="apps" slot="start"></ion-icon>
+      Afficher tous les panneaux de cette catégorie
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="paper" slot="start"></ion-icon>
+      Nemo enim ipsam voluptatem
+    </ion-item>
+
+    <ion-item class="activated">
+      <ion-icon name="warning" slot="start"></ion-icon>
+      <p text-justify>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+        dolores eos qui ratione voluptatem sequi nesciunt</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="share" slot="start"></ion-icon>
+      Sed ut perspiciatis unde omnis iste natus error
+    </ion-item>
+  </ion-card>
+
+</ion-content>

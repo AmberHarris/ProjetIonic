@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title text-center>Catégories de panneaux routiers</ion-title>
+    <ion-buttons slot="start"> <!--groupement de boutons en début (start) ou fin (end) de toolbar-->
+      <ion-back-button defaultHref="home" text=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <div class="jumbotron">
+        <ion-img src="https://picsum.photos/800/300"></ion-img>
+    </div>
+
+
+    <h4 text-center>Liste de catégories</h4> <br>
+    <div padding>
+        <ion-card *ngFor="let categorie of categories" (click)="onClick(categorie.id)" text-center padding >
+          <ion-img [src]="categorie.image" class="imgSize"></ion-img><br>
+          <ion-label class="text-info">
+            <h3>{{categorie.title}}</h3>
+          </ion-label>
+        </ion-card>
+    </div>
+  </ion-card>
+</ion-content>
+
+<ion-footer >
+  <ion-toolbar>
+    <br>
+    <p text-center>Ingrid MARTYR-FALE © 2019</p>
+  </ion-toolbar>
+</ion-footer>
