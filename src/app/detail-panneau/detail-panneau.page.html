@@ -12,4 +12,46 @@
 
 <ion-content>
 
+  <ion-card *ngIf="panneau">
+    <p>
+      <img [src]="panneau.image" class="imgSize" padding/>
+    </p>
+    <br>
+
+    <ion-card-header padding>
+      <div padding>
+        <ion-card-title>{{panneau.title}}</ion-card-title>
+        <ion-card-subtitle >Rédigé par CausticCat</ion-card-subtitle><br> <br>
+        <p text-justify>Vous pourrez trouver sur cette page, les précisions concernant le panneau sélectionné. Bonnes révisions !</p>
+      </div>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item padding text-justify><p>{{panneau.description}}</p></ion-item>
+    </ion-card-content>
+    <div padding>
+      <ion-item>
+        <ion-icon name="paper" slot="start"></ion-icon>
+        Nemo enim ipsam voluptatem
+      </ion-item>
+
+      <ion-item class="activated" color="warning" padding>
+        <ion-icon name="warning" slot="start"></ion-icon>
+        <p text-justify>Nemo voluptatem quia sit aspernatur aut odit, sed quia consequuntur magni
+          dolores eos qui ratione voluptatem </p>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="share" slot="start"></ion-icon>
+        Sed ut perspiciatis unde omnis iste natus error
+      </ion-item>
+    </div>
+  </ion-card>
+
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <p text-center>Ingrid MARTYR-FALE © 2019</p>
+  </ion-toolbar>
+</ion-footer>

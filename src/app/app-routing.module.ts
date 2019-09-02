@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'liste-panneaux', loadChildren: './liste-panneaux/liste-panneaux.module#ListePanneauxPageModule' },
   { path: 'detail-categorie', loadChildren: './detail-categorie/detail-categorie.module#DetailCategoriePageModule' },
   { path: 'detail-panneau', loadChildren: './detail-panneau/detail-panneau.module#DetailPanneauPageModule' },
+  { path: 'panneau-par-categorie', loadChildren: './panneau-par-categorie/panneau-par-categorie.module#PanneauParCategoriePageModule' },
 ];
 
 @NgModule({

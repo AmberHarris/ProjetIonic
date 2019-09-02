@@ -15,8 +15,22 @@
     <h4 text-center> Tous les panneaux de signalisation</h4><br>
     <p class="text-secondary" text-justify>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
 
-    <ion-card *ngFor="let panneau of panneaux" (click)="onClick(panneau.id)" float-left>
-      <ion-img [src]="panneau.image"></ion-img>
-    </ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4" *ngFor="let panneau of panneaux" padding text-center>
+          <div (click)="onClick(panneau.id)">
+            <ion-img [src]="panneau.image" ></ion-img>
+            <ion-label class="text-secondary">{{panneau.title}}</ion-label>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
   </div>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <p text-center>Ingrid MARTYR-FALE © 2019</p>
+  </ion-toolbar>
+</ion-footer>

@@ -18,14 +18,21 @@
 
 
     <h4 text-center>Liste de catégories</h4> <br>
-    <div padding>
-        <ion-card *ngFor="let categorie of categories" (click)="onClick(categorie.id)" text-center padding >
-          <ion-img [src]="categorie.image" class="imgSize"></ion-img><br>
-          <ion-label class="text-info">
-            <h3>{{categorie.title}}</h3>
-          </ion-label>
-        </ion-card>
-    </div>
+    <ion-grid>
+      <ion-row *ngFor="let categorie of categories">
+        <ion-col text-center padding>
+          <ion-card (click)="onClick(categorie.id)">
+            <img [src]="categorie.image" class="imgSize"/><br>
+            <ion-label class="text-info">
+              <h5>{{categorie.title}}</h5>
+            </ion-label>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+
   </ion-card>
 </ion-content>
 

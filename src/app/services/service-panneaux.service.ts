@@ -36,63 +36,63 @@ export class ServicePanneauxService {
     },
     {
       id: 4,
-      title: 'Panneau de direction route principale',
+      title: 'Route principale',
       image: 'assets/images/direction1.jpg',
       categorie: 0,
       description: 'Panneau de position comportant une indication de distance. Le fond vert est utilisé pour indiquer un itinéraire principal reliant de grandes agglomérations importantes.',
     },
     {
       id: 5,
-      title: 'Panneau de direction temporaire',
+      title: 'Direction temporaire',
       image: 'assets/images/direction2.jpg',
       categorie: 0,
       description: 'Panneau de position comportant une indication de distance, Le fond jaune est utilisé lorsqu’un itinéraire temporaire est mis en place.',
     },
     {
       id: 6,
-      title: 'Panneau de direction routes secondaires',
+      title: 'Routes secondaires',
       image: 'assets/images/direction3.jpg',
       categorie: 0,
       description: 'Panneau de position comportant une indication de distance. Le fond blanc est utilisé pour mentionner des itinéraires secondaires ainsi que les localités les plus proches.',
     },
     {
       id: 7,
-      title: 'Panneau de direction grands axes',
+      title: 'Grands axes',
       image: 'assets/images/direction4.jpg',
       categorie: 0,
       description: 'Panneau de position comportant une indication de distance. Le fond bleu est utilisé pour indiquer un itinéraire empruntant une autoroute.',
     },
     {
       id: 8,
-      title: 'Interdiction de dépasser',
+      title: 'Dépasser',
       image: 'assets/images/interdiction1.jpg',
       categorie: 3,
       description: 'Interdiction de dépasser tous les véhicules à moteur autres que ceux à deux roues sans side-car.',
     },
     {
       id: 9,
-      title: 'Interdiction de faire demi-tour',
+      title: 'Demi-tour',
       image: 'assets/images/interdiction2.jpg',
       categorie: 3,
       description: 'Interdiction de faire demi-tour sur la route suivie jusqu\'à la prochaine intersection.',
     },
     {
       id: 10,
-      title: 'Stationnement interdit deuxième quinzaine du mois',
+      title: 'Stationnement',
       image: 'assets/images/interdiction3.jpg',
       categorie: 3,
       description: 'Stationnement interdit du 16 à la fin du mois.',
     },
     {
       id: 11,
-      title: 'Interdiction véhicules spécifiques',
+      title: 'Véhicules spécifiques',
       image: 'assets/images/interdiction4.jpg',
       categorie: 3,
       description: 'Accès interdit aux véhicules à traction animale.',
     },
     {
       id: 12,
-      title: 'Obligation de contournement',
+      title: 'Obligation de contourner',
       image: 'assets/images/obligation1.jpg',
       categorie: 1,
       description: 'Contournement obligatoire par la droite.',
@@ -119,6 +119,7 @@ export class ServicePanneauxService {
       description: 'Directions obligatoires à la prochaine intersection : à droite ou à gauche.',
     },
   ];
+  private newPanneau: Panneaux;
 
   constructor() {
   }
@@ -132,5 +133,13 @@ export class ServicePanneauxService {
       return null;
     }
     return this.panneaux[id];
+  }
+
+  filterByCategorie(categorieId: any) {
+    if (this.panneaux.filter(categorieId)) {
+      this.newPanneau = this.panneaux[categorieId];
+      return this.newPanneau;
+    }
+    return null;
   }
 }
