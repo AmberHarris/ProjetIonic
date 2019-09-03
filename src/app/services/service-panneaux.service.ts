@@ -119,8 +119,8 @@ export class ServicePanneauxService {
       description: 'Directions obligatoires à la prochaine intersection : à droite ou à gauche.',
     },
   ];
-  private newPanneau: Panneaux;
 
+  newTableau;
   constructor() {
   }
 
@@ -134,12 +134,10 @@ export class ServicePanneauxService {
     }
     return this.panneaux[id];
   }
-
-  filterByCategorie(categorieId: any) {
-    if (this.panneaux.filter(categorieId)) {
-      this.newPanneau = this.panneaux[categorieId];
-      return this.newPanneau;
-    }
-    return null;
+  PanneauxByCatId(id: number) {
+      console.log(this.panneaux);
+      return this.panneaux.filter(panneau => panneau.categorie == id);
   }
+
+
 }

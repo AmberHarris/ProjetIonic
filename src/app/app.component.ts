@@ -14,7 +14,7 @@ export class AppComponent {
     {title: 'Home', url: '/home', icon: 'home'},
     {title: 'Categories', url: '/liste-categorie', icon: 'filing'},
     {title: 'Panneaux', url: '/liste-panneaux', icon: 'apps'},
-
+    {title: 'Quiz', url: '/quiz-home', icon: 'barcode'},
   ]
   constructor(
     private platform: Platform,

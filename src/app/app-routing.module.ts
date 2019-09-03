@@ -9,6 +9,9 @@ const routes: Routes = [
   { path: 'detail-categorie', loadChildren: './detail-categorie/detail-categorie.module#DetailCategoriePageModule' },
   { path: 'detail-panneau', loadChildren: './detail-panneau/detail-panneau.module#DetailPanneauPageModule' },
   { path: 'panneau-par-categorie', loadChildren: './panneau-par-categorie/panneau-par-categorie.module#PanneauParCategoriePageModule' },
+  { path: 'quiz-home', loadChildren: './quiz-home/quiz-home.module#QuizHomePageModule' },
+  { path: 'quiz-question', loadChildren: './quiz-question/quiz-question.module#QuizQuestionPageModule' },
+  { path: 'quiz-result', loadChildren: './quiz-result/quiz-result.module#QuizResultPageModule' },
 ];
 
 @NgModule({

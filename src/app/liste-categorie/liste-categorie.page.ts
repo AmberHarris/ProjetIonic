@@ -17,6 +17,7 @@ export class ListeCategoriePage implements OnInit {
 
   ngOnInit() {
   }
+
   getCategories() {
     this.categories = this.categorieService.getAllCategories();
   }
