@@ -12,12 +12,12 @@ export class DetailPanneauPage implements OnInit {
   test;
 
   constructor(private route: ActivatedRoute, private panneauService: ServicePanneauxService, private router: Router) {
-    this.test = this.route.queryParams.subscribe(params => {
+      this.route.queryParams.subscribe(params => {
       if (params && params.id) {
         this.panneau = this.panneauService.get(params.id);
       }
     });
-    this.getPanneaux(this.test);
+
   }
 
   ngOnInit() {

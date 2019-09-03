@@ -1,32 +1,32 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Accueil Quiz</ion-title>
+    <ion-title>Quiz code de la route</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <p>{{question.question}}</p>
-  <p>{{question.bonChoix}}</p>
+  <p> {{question.question}}</p>
+  <p> {{question.panneauId}}</p>
   <ion-list>
     <ion-radio-group (ionChange)="onChange($event)">
       <ion-item>
-        <ion-radio value="1"></ion-radio>
-        <ion-label>{{question.choix1}}</ion-label>
+        <ion-radio value="1"> </ion-radio>
+        <ion-label> {{question.choix1}}</ion-label>
       </ion-item>
       <ion-item>
-        <ion-radio value="2"></ion-radio>
-        <ion-label>{{question.choix2}}</ion-label>
+        <ion-radio value="2"> </ion-radio>
+        <ion-label> {{question.choix2}}</ion-label>
       </ion-item>
       <ion-item>
-        <ion-radio value="3"></ion-radio>
-        <ion-label>{{question.choix3}}</ion-label>
+        <ion-radio value="3"> </ion-radio>
+        <ion-label> {{question.choix3}}</ion-label>
       </ion-item>
       <ion-item>
-        <ion-radio value="4"></ion-radio>
-        <ion-label>{{question.choix4}}</ion-label>
+        <ion-radio value="4"> </ion-radio>
+        <ion-label> {{question.choix4}}</ion-label>
       </ion-item>
     </ion-radio-group>
   </ion-list>
