@@ -11,7 +11,23 @@
 </ion-header>
 
 <ion-content>
+  <ion-card padding>
+    <ion-img src="https://picsum.photos/800/300"></ion-img>
+    <ion-card-title text-center>Votre résultat</ion-card-title>
+    <ion-card-content>
+      <p>Résultat obtenu : {{score}} / 10 pts</p>
+      <div *ngIf="score > 5">
+        <p class="alert alert-dismissible alert-success">Bravo vous avez réussi le test !</p>
+      </div>
 
+      <div *ngIf="score <= 5">
+       <p class="alert alert-dismissible alert-danger">
+         Vous avez échoué au test ! <br>
+         Vous devez avoir un score supérieur ou égal à 6 / 10 pts, pour réussir le test.
+       </p>
+      </div>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
 
 <ion-footer>

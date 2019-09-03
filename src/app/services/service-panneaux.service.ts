@@ -139,5 +139,10 @@ export class ServicePanneauxService {
       return this.panneaux.filter(panneau => panneau.categorie == id);
   }
 
+  getPanneauQuestion(id: number) {
+    console.log(this.panneaux);
+    return this.panneaux.filter(panneau => panneau.id == id);
+  }
+
 
 }

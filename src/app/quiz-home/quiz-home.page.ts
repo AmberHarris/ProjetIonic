@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-quiz-home',
@@ -8,7 +9,7 @@ import { Storage } from '@ionic/storage';
 })
 export class QuizHomePage implements OnInit {
   lastQuiz = 0;
-  constructor(private storage: Storage) {
+  constructor(private storage: Storage, private router: Router) {
     /*récupérer le résultat du dernier Quiz*/
     storage.get('lastQuiz').then((val) => {
       this.lastQuiz = val;
@@ -23,5 +24,8 @@ export class QuizHomePage implements OnInit {
     this.storage.get('lastQuiz').then((val) => {
       this.lastQuiz = val;
     });
+  }
+  nextPage() {
+    this.router.navigate(['quiz-question']);
   }
 }

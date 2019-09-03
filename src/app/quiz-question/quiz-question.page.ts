@@ -3,6 +3,7 @@ import { Storage } from '@ionic/storage';
 import {Question} from '../services/question';
 import {QuestionService} from '../services/question.service';
 import {NavigationExtras, Router} from '@angular/router';
+import {ServicePanneauxService} from "../services/service-panneaux.service";
 
 @Component({
   selector: 'app-quiz-question',
@@ -14,8 +15,9 @@ export class QuizQuestionPage implements OnInit {
   selected = 0;
   score = 0;
 
-  constructor(private service: QuestionService, private storage: Storage, private router: Router) {
+  constructor(private service: QuestionService, private storage: Storage, private router: Router, private questionService: QuestionService, private servicePanneau: ServicePanneauxService) {
     this.question = this.service.get(0);
+
   }
 
   ngOnInit() {
@@ -39,6 +41,13 @@ export class QuizQuestionPage implements OnInit {
       console.log(this.score);
       this.router.navigate(['quiz-result']);
     }
+  }
+  getImage(id: any) {
+    return this.servicePanneau.get(id).image;
+  }
+
+  getScore() {
+    return this.score;
   }
 
 }
